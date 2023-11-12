@@ -6,8 +6,6 @@ import signal
 signal.signal(signal.SIGINT, 0)
 
 print(f"PID: {os.getpid()}")
-print("Listening on port 5555")
-
 
 def worker_routine(worker_url: str,
                    context: zmq.Context = None):

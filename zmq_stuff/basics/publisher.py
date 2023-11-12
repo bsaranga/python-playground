@@ -24,6 +24,7 @@ with zmq.Context() as context:
         request = response.recv_string()
         if (request == "requesting stream..."):
             response.send_string(f"Ack")
+            time.sleep(2)
             for i in range(0, 5, 1):
                 publisher.send_string(f"HELLO WORLD >{i}>")
             
