@@ -19,11 +19,8 @@ class Employee:
     def set_raise_amount(cls, amount):
         cls.raise_amount = amount
 
-emp1 = Employee("John", "Doe", 50000)
-emp2 = Employee("Jane", "Doe", 60000)
-
-emp1.raise_amount()
-emp2.raise_amount()
-
-print(emp1.pay)
-print(emp2.pay)
+    @staticmethod
+    def is_workday(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return True
