@@ -2,6 +2,15 @@ class Employee:
     raise_amount = 1.04 #class variables
     num_emp = 0
 
+    def __add__(self, other):
+        return self.pay + other.pay
+
+    def __repr__(self) -> str:
+        return f"Employee({self.firstName}, {self.lastName}, {self.pay})"
+    
+    def __str__(self) -> str:
+        return f"{self.fullName()} - {self.email}"
+
     def __init__(self, firstName, lastName, pay) -> None:
         self.firstName = firstName
         self.lastName = lastName
@@ -51,3 +60,9 @@ class Manager(Employee):
     def print_employees(self):
         for emp in self.employees:
             print("-->", emp.fullName())
+
+
+emp1 = Employee('John', 'Doe', 50000)
+emp2 = Employee('Jane', 'Doe', 60000)
+
+print(emp1 + emp2)
